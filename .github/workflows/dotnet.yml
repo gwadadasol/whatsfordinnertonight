@@ -23,7 +23,7 @@ jobs:
     - name: Install .Net MAUI
       run: dotnet workload install maui
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore WhatsForDinnerTonight/src/Mobile/WhatsForDinnerTonight.csproj
     - name: Build
       run: dotnet build WhatsForDinnerTonight/src/Mobile/WhatsForDinnerTonight.csproj -c Release -f net8.0-android --no-restore
 #    - name: Test
