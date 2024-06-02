@@ -1,30 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WhatsForDinnerTonight.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-
-            <Label
-                Text="What's for dinner tonight?"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Random" 
-                SemanticProperties.Hint="Select a recipe randomly"
-                Clicked="OnReceipRequest"
-                HorizontalOptions="Fill" /> 
-
-            <Label
-                x:Name="SelectedRecipe"
-                />
-
-        </VerticalStackLayout>
-    </ScrollView>
-
+    <StackLayout Padding="10">
+        <Label Text="Welcome to Meal Suggestion App" FontSize="Large" HorizontalOptions="Center" />
+        <Button Text="What's for dinner today?" Command="{Binding GetSuggestionCommand}" />
+        <Label Text="{Binding CurrentMeal.Name}" FontSize="Medium" HorizontalOptions="Center" />
+        <Button Text="Accept" Command="{Binding AcceptSuggestionCommand}" />
+        <Button Text="Reject" Command="{Binding GetSuggestionCommand}" />
+        <Label Text="{Binding CurrentMeal.Ingredients}" FontSize="Small" HorizontalOptions="Center" />
+        <Label Text="{Binding CurrentMeal.Recipe}" FontSize="Small" HorizontalOptions="Center" />
+    </StackLayout>
 </ContentPage>
